@@ -400,6 +400,12 @@ FodyWeavers.xsd
 *.sln.iml
 
 
+## One more
+
+*.vcxproj
+*.vcxproj.filter
+
+
 ## Cpp-specific
 
 >>>>>>> e1f5ed5 (Настройка gitignore под C++ в разных IDE)
