@@ -403,7 +403,7 @@ FodyWeavers.xsd
 ## One more
 
 *.vcxproj
-*.vcxproj.filter
+*.vcxproj.filters
 
 
 ## Cpp-specific
