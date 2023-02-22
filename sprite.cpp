@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <string>
 #include "raylib.h"
 #include "library_of_textures.hpp"
@@ -25,6 +26,8 @@ namespace Example
 		DrawTextureV(texture, left_top_corner, WHITE);
     }
 =======
+=======
+>>>>>>> b89589e (Первичная заливка файлов проекта)
 #include <string>
 #include "raylib.h"
 #include "library_of_textures.hpp"
@@ -50,5 +53,8 @@ namespace Example
        
 		DrawTextureV(texture, left_top_corner, WHITE);
     }
+<<<<<<< HEAD
+>>>>>>> b89589e (Первичная заливка файлов проекта)
+=======
 >>>>>>> b89589e (Первичная заливка файлов проекта)
 }

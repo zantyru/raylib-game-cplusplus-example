@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef __SPRITE_HPP__
 #define __SPRITE_HPP__
 
@@ -24,6 +25,8 @@ namespace Example
 
 
 =======
+=======
+>>>>>>> b89589e (Первичная заливка файлов проекта)
 #ifndef __SPRITE_HPP__
 #define __SPRITE_HPP__
 
@@ -48,5 +51,8 @@ namespace Example
 }
 
 
+<<<<<<< HEAD
+>>>>>>> b89589e (Первичная заливка файлов проекта)
+=======
 >>>>>>> b89589e (Первичная заливка файлов проекта)
 #endif  // __SPRITE_HPP__

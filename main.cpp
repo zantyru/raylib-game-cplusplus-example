@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "raylib.h"
 #include "constants.hpp"
 #include "library_of_textures.hpp"
@@ -44,6 +45,8 @@ int main()
 // Всё в одном файле, чтобы компилировать без собственного make-файла
 // #include "sprite.cpp"
 =======
+=======
+>>>>>>> b89589e (Первичная заливка файлов проекта)
 #include "raylib.h"
 #include "constants.hpp"
 #include "library_of_textures.hpp"
@@ -88,4 +91,7 @@ int main()
 
 // Всё в одном файле, чтобы компилировать без собственного make-файла
 // #include "sprite.cpp"
+<<<<<<< HEAD
+>>>>>>> b89589e (Первичная заливка файлов проекта)
+=======
 >>>>>>> b89589e (Первичная заливка файлов проекта)
