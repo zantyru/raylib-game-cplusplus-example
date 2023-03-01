@@ -4,19 +4,19 @@
 
 namespace Example
 {
-	StageCellObjectType StageCellObject::GetType() const
-	{
-		return this->_type;
-	}
+    StageCellObjectType StageCellObject::GetType() const
+    {
+        return this->_type;
+    }
 
-	bool StageCellObject::IsPickable() const
-	{
-		return this->_is_pickupable;
-	}
+    bool StageCellObject::IsPickable() const
+    {
+        return this->_is_pickupable;
+    }
 
-	bool StageCellObject::IsBlocker() const
-	{
-		return this->_is_blocker;
-	}
+    bool StageCellObject::IsBlocker() const
+    {
+        return this->_is_blocker;
+    }
 
 }

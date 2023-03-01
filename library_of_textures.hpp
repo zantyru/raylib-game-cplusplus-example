@@ -9,22 +9,22 @@
 
 namespace Example
 {
-	class TextureLibrary
-	{
-	public:
-		TextureLibrary();
-		~TextureLibrary();
+    class TextureLibrary
+    {
+    public:
+        TextureLibrary();
+        ~TextureLibrary();
 
-		void LoadTexture(const int& id, const std::string& filename);
-		void UnloadTexture(const int& id);
-		const Texture2D& GetTexture(const int& id) const;
+        void LoadTexture(const int& id, const std::string& filename);
+        void UnloadTexture(const int& id);
+        const Texture2D& GetTexture(const int& id) const;
 
-	private:
-		Texture2D _textures[TEXTURE_LIBRARY_CAPACITY];
-		bool _is_texture_loaded[TEXTURE_LIBRARY_CAPACITY];
+    private:
+        Texture2D _textures[TEXTURE_LIBRARY_CAPACITY];
+        bool _is_texture_loaded[TEXTURE_LIBRARY_CAPACITY];
 
-		bool _is_id_valid(const int& id) const;
-	};
+        bool _is_id_valid(const int& id) const;
+    };
 }
 
 
