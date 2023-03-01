@@ -1,4 +1,3 @@
-
 #include "constants.hpp"
 #include "stage_cell_object.hpp"
 

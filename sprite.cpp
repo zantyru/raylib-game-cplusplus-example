@@ -1,4 +1,3 @@
-
 #include <string>
 #include "raylib.h"
 #include "library_of_textures.hpp"
