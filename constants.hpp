@@ -30,7 +30,7 @@ namespace Example
         DOOR,
         STAIRS_UP,
         STAIRS_DOWN
-    };
+    } StageCellObjectType;
 }
 
 
