@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include <string>
 #include "raylib.h"
 #include "constants.hpp"
@@ -67,9 +65,7 @@ namespace Example
 	{
 		return id >= 0 && id < TEXTURE_LIBRARY_CAPACITY;
 	}
-=======
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
+
 #include <string>
 #include "raylib.h"
 #include "constants.hpp"
@@ -137,8 +133,4 @@ namespace Example
 	{
 		return id >= 0 && id < TEXTURE_LIBRARY_CAPACITY;
 	}
-<<<<<<< HEAD
->>>>>>> b89589e (Первичная заливка файлов проекта)
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
 }

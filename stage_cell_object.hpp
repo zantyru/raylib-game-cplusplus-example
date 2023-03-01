@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #ifndef __STAGE_CELL_OBJECT_HPP__
 #define __STAGE_CELL_OBJECT_HPP__
 
@@ -37,9 +36,6 @@ namespace Example
 }
 
 
-=======
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
 #ifndef __STAGE_CELL_OBJECT_HPP__
 #define __STAGE_CELL_OBJECT_HPP__
 
@@ -77,8 +73,4 @@ namespace Example
 }
 
 
-<<<<<<< HEAD
->>>>>>> b89589e (Первичная заливка файлов проекта)
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
 #endif  // __STAGE_CELL_OBJECT_HPP__

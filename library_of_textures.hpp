@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #ifndef __LIBRARY_OF_TEXTURES_HPP__
 #define __LIBRARY_OF_TEXTURES_HPP__
 
@@ -31,9 +30,6 @@ namespace Example
 
 
 #endif  // __LIBRARY_OF_TEXTURES_HPP__
-=======
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
 #ifndef __LIBRARY_OF_TEXTURES_HPP__
 #define __LIBRARY_OF_TEXTURES_HPP__
 
@@ -65,7 +61,3 @@ namespace Example
 
 
 #endif  // __LIBRARY_OF_TEXTURES_HPP__
-<<<<<<< HEAD
->>>>>>> b89589e (Первичная заливка файлов проекта)
-=======
->>>>>>> b89589e (Первичная заливка файлов проекта)
