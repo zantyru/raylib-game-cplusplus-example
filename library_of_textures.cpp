@@ -8,7 +8,7 @@ namespace Example
 {
     TextureLibrary::TextureLibrary()
     {
-        for (int idx = 0; idx < TEXTURE_LIBRARY_CAPACITY; idx++)
+        for (int idx = 0; idx < TextureLibrary::CAPACITY; idx++)
         {
             this->_is_texture_loaded[idx] = false;
         }
@@ -16,7 +16,7 @@ namespace Example
 
     TextureLibrary::~TextureLibrary()
     {
-        for (int idx = 0; idx < TEXTURE_LIBRARY_CAPACITY; idx++)
+        for (int idx = 0; idx < TextureLibrary::CAPACITY; idx++)
         {
             if (this->_is_texture_loaded[idx])
             {
@@ -63,6 +63,6 @@ namespace Example
 
     bool TextureLibrary::_is_id_valid(const int& id) const
     {
-        return id >= 0 && id < TEXTURE_LIBRARY_CAPACITY;
+        return id >= 0 && id < TextureLibrary::CAPACITY;
     }
 }

@@ -12,6 +12,9 @@ namespace Example
     class TextureLibrary
     {
     public:
+
+        static const int CAPACITY = 128;
+
         TextureLibrary();
         ~TextureLibrary();
 
@@ -20,8 +23,8 @@ namespace Example
         const Texture2D& GetTexture(const int& id) const;
 
     private:
-        Texture2D _textures[TEXTURE_LIBRARY_CAPACITY];
-        bool _is_texture_loaded[TEXTURE_LIBRARY_CAPACITY];
+        Texture2D _textures[TextureLibrary::CAPACITY];
+        bool _is_texture_loaded[TextureLibrary::CAPACITY];
 
         bool _is_id_valid(const int& id) const;
     };
