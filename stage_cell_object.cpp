@@ -18,5 +18,4 @@ namespace Example
     {
         return this->_is_blocker;
     }
-
 }
