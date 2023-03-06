@@ -27,23 +27,23 @@ namespace Example
 
     void TextureLibrary::LoadTexture(const int& id, const std::string& filename)
     {
-        // Ïğè íåêîğğåêòíîì id äîñğî÷íûé âûõîä
+        // ĞŸÑ€Ğ¸ Ğ½ĞµĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğ¼ id Ğ´Ğ¾ÑÑ€Ğ¾Ñ‡Ğ½Ñ‹Ğ¹ Ğ²Ñ‹Ñ…Ğ¾Ğ´
         if (!this->_is_id_valid(id)) return;
 
-        // Åñëè ôàéëà íå ñóùåñòâóåò, òî äîñğî÷íûé âûõîä
+        // Ğ•ÑĞ»Ğ¸ Ñ„Ğ°Ğ¹Ğ»Ğ° Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚, Ñ‚Ğ¾ Ğ´Ğ¾ÑÑ€Ğ¾Ñ‡Ğ½Ñ‹Ğ¹ Ğ²Ñ‹Ñ…Ğ¾Ğ´
         if (!::FileExists(filename.c_str())) return;
 
-        // Åñëè ïî óêàçàííîìó id óæå çàãğóæåíà òåêñòóğà, òî âûãğóæàåì å¸
+        // Ğ•ÑĞ»Ğ¸ Ğ¿Ğ¾ ÑƒĞºĞ°Ğ·Ğ°Ğ½Ğ½Ğ¾Ğ¼Ñƒ id ÑƒĞ¶Ğµ Ğ·Ğ°Ğ³Ñ€ÑƒĞ¶ĞµĞ½Ğ° Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ğ°, Ñ‚Ğ¾ Ğ²Ñ‹Ğ³Ñ€ÑƒĞ¶Ğ°ĞµĞ¼ ĞµÑ‘
         this->UnloadTexture(id);
 
-        // Çàãğóçêà
+        // Ğ—Ğ°Ğ³Ñ€ÑƒĞ·ĞºĞ°
         this->_textures[id] = ::LoadTexture(filename.c_str());
         this->_is_texture_loaded[id] = true;
     }
 
     void TextureLibrary::UnloadTexture(const int& id)
     {
-        // Ïğè íåêîğğåêòíîì id äîñğî÷íûé âûõîä
+        // ĞŸÑ€Ğ¸ Ğ½ĞµĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğ¼ id Ğ´Ğ¾ÑÑ€Ğ¾Ñ‡Ğ½Ñ‹Ğ¹ Ğ²Ñ‹Ñ…Ğ¾Ğ´
         if (!this->_is_id_valid(id)) return;
 
         ::UnloadTexture(this->_textures[id]);
@@ -52,11 +52,11 @@ namespace Example
 
     const Texture2D& TextureLibrary::GetTexture(const int& id) const
     {
-        // Ïğè íåêîğğåêòíîì id âîçâğàùàåì òåêñòóğó ñ id == 0
-        if (!this->_is_id_valid(id)) return this->_textures[0];  //@THREAT Ìîæåò áûòü íå çàãğóæåíà òåêñòóğà
+        // ĞŸÑ€Ğ¸ Ğ½ĞµĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾Ğ¼ id Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰Ğ°ĞµĞ¼ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñƒ Ñ id == 0
+        if (!this->_is_id_valid(id)) return this->_textures[0];  //@THREAT ĞœĞ¾Ğ¶ĞµÑ‚ Ğ±Ñ‹Ñ‚ÑŒ Ğ½Ğµ Ğ·Ğ°Ğ³Ñ€ÑƒĞ¶ĞµĞ½Ğ° Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ğ°
 
-        // Åñëè òåêñòóğà íå çàãğóæåíà, òî âîçâğàùàåì òåêñòóğó ñ id == 0
-        if (!this->_is_texture_loaded[id]) return this->_textures[0];  //@THREAT Ìîæåò áûòü íå çàãğóæåíà òåêñòóğà
+        // Ğ•ÑĞ»Ğ¸ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ğ° Ğ½Ğµ Ğ·Ğ°Ğ³Ñ€ÑƒĞ¶ĞµĞ½Ğ°, Ñ‚Ğ¾ Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰Ğ°ĞµĞ¼ Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ñƒ Ñ id == 0
+        if (!this->_is_texture_loaded[id]) return this->_textures[0];  //@THREAT ĞœĞ¾Ğ¶ĞµÑ‚ Ğ±Ñ‹Ñ‚ÑŒ Ğ½Ğµ Ğ·Ğ°Ğ³Ñ€ÑƒĞ¶ĞµĞ½Ğ° Ñ‚ĞµĞºÑÑ‚ÑƒÑ€Ğ°
 
         return this->_textures[id];
     }
