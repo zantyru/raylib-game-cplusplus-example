@@ -28,7 +28,7 @@ namespace Example
     void TextureLibrary::LoadTexture(const int& id, const std::string& filename)
     {
         // При некорректном id досрочный выход
-        if (!this->_is_id_valid(id)) return;
+        if (!this->_IsIdValid(id)) return;
 
         // Если файла не существует, то досрочный выход
         if (!::FileExists(filename.c_str())) return;
@@ -44,7 +44,7 @@ namespace Example
     void TextureLibrary::UnloadTexture(const int& id)
     {
         // При некорректном id досрочный выход
-        if (!this->_is_id_valid(id)) return;
+        if (!this->_IsIdValid(id)) return;
 
         ::UnloadTexture(this->_textures[id]);
         this->_is_texture_loaded[id] = false;
@@ -53,7 +53,7 @@ namespace Example
     const Texture2D& TextureLibrary::GetTexture(const int& id) const
     {
         // При некорректном id возвращаем текстуру с id == 0
-        if (!this->_is_id_valid(id)) return this->_textures[0];  //@THREAT Может быть не загружена текстура
+        if (!this->_IsIdValid(id)) return this->_textures[0];  //@THREAT Может быть не загружена текстура
 
         // Если текстура не загружена, то возвращаем текстуру с id == 0
         if (!this->_is_texture_loaded[id]) return this->_textures[0];  //@THREAT Может быть не загружена текстура
@@ -61,7 +61,7 @@ namespace Example
         return this->_textures[id];
     }
 
-    bool TextureLibrary::_is_id_valid(const int& id) const
+    bool TextureLibrary::_IsIdValid(const int& id) const
     {
         return id >= 0 && id < TextureLibrary::CAPACITY;
     }

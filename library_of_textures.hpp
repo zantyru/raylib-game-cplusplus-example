@@ -26,7 +26,7 @@ namespace Example
         Texture2D _textures[TextureLibrary::CAPACITY];
         bool _is_texture_loaded[TextureLibrary::CAPACITY];
 
-        bool _is_id_valid(const int& id) const;
+        bool _IsIdValid(const int& id) const;
     };
 }
 
