@@ -3,11 +3,8 @@
 
 namespace Example
 {
-    StageCell::StageCell()
+    StageCell::StageCell() : _floor(StageCell::Floor::NONE), _items_count(0)
     {
-        this->_floor = StageCell::Floor::NONE;
-        this->_items_count = 0;
-
         for (int idx = 0; idx < StageCell::CAPACITY; idx++)
         {
             this->_items[idx] = StageCell::Object::NONE;
@@ -18,11 +15,11 @@ namespace Example
     {
         this->_floor = floor;
 
-        //@NOTE Îáðàáîòêà ñëó÷àÿ, êîãäà íåïóñòîé ÿ÷åéêå âûñòàâëÿåòñÿ
-        // çíà÷åíèå ïîëà NONE, îòäàíî êëàññó îòâåòñòâåííîìó çà
-        // ðåàëèçàöèþ èãðîâûõ ìåõàíèê (ïðàâèë èãðû). Òî åñòü çäåñü
-        // ñ îáúåêòàìè íè÷åãî íå ïðîèñõîäèò, îíè îñòàþòñÿ "âèñåòü"
-        // íàä ïóñòîòîé.
+        //@NOTE ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° ÑÐ»ÑƒÑ‡Ð°Ñ, ÐºÐ¾Ð³Ð´Ð° Ð½ÐµÐ¿ÑƒÑÑ‚Ð¾Ð¹ ÑÑ‡ÐµÐ¹ÐºÐµ Ð²Ñ‹ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ÑÑ
+        // Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð»Ð° NONE, Ð¾Ñ‚Ð´Ð°Ð½Ð¾ ÐºÐ»Ð°ÑÑÑƒ Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼Ñƒ Ð·Ð°
+        // Ñ€ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸ÑŽ Ð¸Ð³Ñ€Ð¾Ð²Ñ‹Ñ… Ð¼ÐµÑ…Ð°Ð½Ð¸Ðº (Ð¿Ñ€Ð°Ð²Ð¸Ð» Ð¸Ð³Ñ€Ñ‹). Ð¢Ð¾ ÐµÑÑ‚ÑŒ Ð·Ð´ÐµÑÑŒ
+        // Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°Ð¼Ð¸ Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð¿Ñ€Ð¾Ð¸ÑÑ…Ð¾Ð´Ð¸Ñ‚, Ð¾Ð½Ð¸ Ð¾ÑÑ‚Ð°ÑŽÑ‚ÑÑ "Ð²Ð¸ÑÐµÑ‚ÑŒ"
+        // Ð½Ð°Ð´ Ð¿ÑƒÑÑ‚Ð¾Ñ‚Ð¾Ð¹.
     }
 
     const StageCell::Floor &StageCell::GetFloor() const
@@ -38,21 +35,26 @@ namespace Example
     bool StageCell::PushObject(const StageCell::Object &item)
     {
         if (this->IsFullfilled()) return false;
+        
         if (this->IsVoid()) return false;
+
         this->_items[this->_items_count] = item;
         this->_items_count++;
+
         return true;
     }
 
     const StageCell::Object &StageCell::PopObjectAt(const int &idx)
     {
-        if (!this->_is_index_correct(idx)) return StageCell::Object::NONE;
+        if (!this->_IsIndexCorrect(idx)) return StageCell::Object::NONE;
 
         StageCell::Object item = this->_items[idx];
+        
         for (int jdx = idx; jdx < this->_items_count - 1; jdx++)
         {
             this->_items[jdx] = this->_items[jdx + 1];
         }
+
         this->_items[this->_items_count - 1] = StageCell::Object::NONE;
         this->_items_count--;
 
@@ -72,7 +74,8 @@ namespace Example
 
     const StageCell::Object &StageCell::PeekObjectAt(const int& idx) const
     {
-        if (!this->_is_index_correct(idx)) return StageCell::Object::NONE;
+        if (!this->_IsIndexCorrect(idx)) return StageCell::Object::NONE;
+        
         return this->_items[idx];
     }
 
@@ -86,7 +89,7 @@ namespace Example
         return this->_items_count == 0;
     }
 
-    bool StageCell::_is_index_correct(const int &idx) const
+    bool StageCell::_IsIndexCorrect(const int &idx) const
     {
         return idx >= 0 && idx < StageCell::CAPACITY;
     }

@@ -9,7 +9,7 @@ namespace Example
     public:
         static const int CAPACITY = 10;
                 
-        enum class Floor  // Это новый (строгий) enum. Появился в C++11 
+        enum class Floor  // Р­С‚Рѕ РЅРѕРІС‹Р№ (СЃС‚СЂРѕРіРёР№) enum. РџРѕСЏРІРёР»СЃСЏ РІ C++11 
         {
             NONE,
             STONE,
@@ -47,7 +47,7 @@ namespace Example
         StageCell::Floor _floor;
         StageCell::Object _items[StageCell::CAPACITY];
 
-        bool _is_index_correct(const int &idx) const;
+        bool _IsIndexCorrect(const int &idx) const;
     };
 }
 
