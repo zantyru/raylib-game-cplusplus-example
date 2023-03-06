@@ -11,13 +11,14 @@ namespace Example
     class Sprite
     {
     public:
-        Sprite(const int& texture_id);
+        Sprite(const TextureLibrary &texture_library, const int &texture_id, const Vector2 &origin);
         
-        void DrawAt(const Vector2& position, const TextureLibrary& texture_library) const;
+        void DrawAt(const Vector2 &position, const ::Color &color = ::WHITE) const;
         
     private:
-        Vector2 _center_position;
         int _texture_id;
+        Vector2 _origin;
+        const TextureLibrary &_texture_library;
     };
 }
 

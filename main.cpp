@@ -12,7 +12,7 @@ int main()
     Example::TextureLibrary texture_library;
     texture_library.LoadTexture(12, "texture.png");
     
-    Example::Sprite sprite(12);
+    Example::Sprite sprite(texture_library, 12, Vector2{20.0f, 20.0f});
     Vector2 v;
     v.x = 0.0f;
     v.y = 0.0f;
@@ -30,7 +30,7 @@ int main()
     {
         BeginDrawing();
         ClearBackground(BLACK);
-        sprite.DrawAt(v, texture_library);
+        sprite.DrawAt(v);
         EndDrawing();
     }
     
