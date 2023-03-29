@@ -3,6 +3,8 @@
 
 namespace Example
 {
+    StageCell Stage::_out_of_stage_cell = StageCell();
+
     StageCell &Stage::GetCellAt(const int &x, const int &y)
     {
         if (!this->_IsCoordsCorrect(x, y)) return this->_GetOutOfStageCell();
