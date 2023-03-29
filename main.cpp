@@ -12,15 +12,14 @@ int main()
     Example::TextureLibrary texture_library;
     texture_library.LoadTexture(12, "texture.png");
     
-    Example::Sprite sprite(texture_library, 12, Vector2{20.0f, 20.0f});
-    Vector2 v;
-    v.x = 0.0f;
-    v.y = 0.0f;
-    
+    Example::Sprite sprite(texture_library, 12, Vector2{ 20.0f, 20.0f });
+    Example::Sprite sprite_error_1(texture_library, 2, Vector2{ 0.0f, 0.0f });
+    Example::Sprite sprite_error_2(texture_library, -9, Vector2{ 0.0f, 0.0f });
+
     // "Прогрев" конвейера отрисовки  //@HACK
     Texture2D texture = LoadTexture("texture.png");
     BeginDrawing();
-    DrawTexture(texture, 10, 200, WHITE);
+    DrawTexture(texture, -texture.width, -texture.height, WHITE);
     EndDrawing();
     UnloadTexture(texture);
     
@@ -30,7 +29,9 @@ int main()
     {
         BeginDrawing();
         ClearBackground(BLACK);
-        sprite.DrawAt(v);
+        sprite.DrawAt(Vector2{ 0.0f, 0.0f });
+        sprite_error_1.DrawAt(Vector2{ 200.0f, 100.0f });
+        sprite_error_2.DrawAt(Vector2{ 400.0f, 300.0f });
         EndDrawing();
     }
     

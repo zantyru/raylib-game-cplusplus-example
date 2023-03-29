@@ -12,6 +12,14 @@ namespace Example
         {
             this->_is_texture_loaded[idx] = false;
         }
+
+        ::Image image = ::GenImageColor(
+            TextureLibrary::FALLBACK_TEXTURE_WIDTH,
+            TextureLibrary::FALLBACK_TEXTURE_HEIGHT,
+            ::RED
+        );
+        this->_fallback_texture = ::LoadTextureFromImage(image);
+        ::UnloadImage(image);
     }
 
     TextureLibrary::~TextureLibrary()
@@ -23,6 +31,8 @@ namespace Example
                 ::UnloadTexture(this->_textures[idx]);
             }
         }
+
+        ::UnloadTexture(this->_fallback_texture);
     }
 
     void TextureLibrary::LoadTexture(const int& id, const std::string& filename)
@@ -50,13 +60,13 @@ namespace Example
         this->_is_texture_loaded[id] = false;
     }
 
-    const Texture2D& TextureLibrary::GetTexture(const int& id) const
+    const ::Texture2D& TextureLibrary::GetTexture(const int& id) const
     {
-        // При некорректном id возвращаем текстуру с id == 0
-        if (!this->_IsIdValid(id)) return this->_textures[0];  //@THREAT Может быть не загружена текстура
+        // При некорректном id возвращаем текстуру-заглушку
+        if (!this->_IsIdValid(id)) return this->_fallback_texture;
 
-        // Если текстура не загружена, то возвращаем текстуру с id == 0
-        if (!this->_is_texture_loaded[id]) return this->_textures[0];  //@THREAT Может быть не загружена текстура
+        // Если текстура не загружена, то возвращаем текстуру-заглушку
+        if (!this->_is_texture_loaded[id]) return this->_fallback_texture;
 
         return this->_textures[id];
     }
